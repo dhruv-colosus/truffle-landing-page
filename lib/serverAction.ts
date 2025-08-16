@@ -2,6 +2,23 @@
 import * as z from "zod"
 
 
+type ContactFormState = {
+    success?: boolean;
+    formValues?: {
+        name?: string;
+        email?: string;
+        message?: string;
+    };
+    formattedError?: {
+        fieldErrors?: {
+            name?: string;
+            email?: string;
+            message?: string;
+        };
+    };
+};
+
+
 const formSchema = z.object({
     name: z.string().min(1, "Name is required"),
     email: z.email("Invalid email"),
@@ -9,8 +26,7 @@ const formSchema = z.object({
 })
 
 
-
-export default async function submitContactUsForm(_state: any, formData: FormData) {
+export default async function submitContactUsForm(_state: ContactFormState, formData: FormData) {
     const formValues = {
         name: formData.get('name'),
         email: formData.get('email'),
