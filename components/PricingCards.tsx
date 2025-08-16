@@ -4,8 +4,9 @@ import LinkButton from "@/components/ui/LinkButton";
 type Plan = {
     name: string;
     price: string;
-    features: string[];
-    action: string;
+    features: string[]
+    action: string,
+    period?: string,
     popular: boolean;
     href: string;
 };
