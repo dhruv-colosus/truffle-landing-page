@@ -5,6 +5,7 @@ import "./globals.css";
 const phudu = Phudu({
   variable: "--font-phudu",
   display: "swap",
+  subsets: ['latin']
 });
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -16,6 +17,7 @@ const leagueSpartan = League_Spartan({
   variable: "--font-logo",
   weight: ["600"],
   display: "swap",
+  subsets: ['latin']
 });
 
 
