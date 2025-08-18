@@ -4,18 +4,14 @@ import { blogs } from '../blogs';
 import Image from 'next/image';
 
 interface BlogPageProps {
-    params: {
-        blogTitle: string;
-    };
+    params: Promise<{ blogTitle: string }>;
 }
 
-export default function BlogPost({ params }: BlogPageProps) {
-    const { blogTitle } = params;
+export default async function BlogPost({ params }: BlogPageProps) {
+    const { blogTitle } = await params;
 
-    console.log(blogTitle)
     // Find the blog post by slug
     const blog = blogs.find(b => b.slug === blogTitle);
-
 
     // If blog not found, show 404
     if (!blog) {
@@ -131,25 +127,27 @@ export default function BlogPost({ params }: BlogPageProps) {
     );
 }
 
-// Generate static params for all blog posts (optional, for static generation)
-// export async function generateStaticParams() {
-//     return blogs.map((blog) => ({
-//         blogTitle: blog.slug,
-//     }));
-// }
+// Generate/ static params for all blog posts (optional, for static generation)
+export async function generateStaticParams() {
+    return blogs.map((blog) => ({
+        blogTitle: blog.slug,
+    }));
+}
 
 // Generate metadata for each blog post (optional, for SEO)
-// export async function generateMetadata({ params }: BlogPageProps) {
-//     const blog = blogs.find(b => b.slug === params.blogTitle);
+export async function generateMetadata({ params }: BlogPageProps) {
+    const { blogTitle } = await params;
 
-//     if (!blog) {
-//         return {
-//             title: 'Blog Post Not Found',
-//         };
-//     }
+    const blog = blogs.find(b => b.slug === blogTitle);
 
-//     return {
-//         title: blog.title,
-//         description: blog.excerpt,
-//     };
-// }
+    if (!blog) {
+        return {
+            title: 'Blog Post Not Found',
+        };
+    }
+
+    return {
+        title: blog.title,
+        description: blog.excerpt,
+    };
+}
