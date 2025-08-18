@@ -4,13 +4,13 @@ import { blogs } from '../blogs';
 import Image from 'next/image';
 
 interface BlogPageProps {
-    params: {
+    params: Promise<{
         blogTitle: string;
-    };
+    }>;
 }
 
-export default function BlogPost({ params }: BlogPageProps) {
-    const { blogTitle } = params;
+export default async function BlogPost({ params }: BlogPageProps) {
+    const { blogTitle } = await params;
 
     console.log(blogTitle)
     // Find the blog post by slug
