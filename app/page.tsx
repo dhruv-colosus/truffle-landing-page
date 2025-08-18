@@ -6,6 +6,7 @@ import LinkButton from "@/components/ui/LinkButton";
 import Navbar from "@/components/Navbar";
 import SearchBar from "@/components/SearchBar";
 import Marquee from "@/components/Marquee";
+import FadeImage from "@/components/FadeImage";
 
 // Lazy-Load lower sections components
 const ProductShowcase = dynamic(() => import("@/components/ProductShowcase"))
@@ -24,18 +25,21 @@ export default function HomePage() {
       id: 1,
       title: "Guide to Finding the best homes ",
       imgSrc: '/Blog/blog1.webp',
+      slug: "guide-to-finding-the-best-homes",
       blogLink: '/blog/guide-to-finding-best-homes',
     },
     {
       id: 2,
       title: "New to Flipping ? Learn these 5 tricks",
       imgSrc: '/Blog/blog2.webp',
+      slug: "new-to-flipping-learn-these-5-tricks",
       blogLink: '/blog/new-to-flipping-learn-these-5-tricks',
     },
     {
       id: 3,
       title: "Choose the best neighbourhood for your needs",
       imgSrc: '/Blog/blog3.webp',
+      slug: "choose-the-best-neighbourhood-for-your-needs",
       blogLink: '/blog/choose-best-neighbourhood-for-your-needs',
     },
   ]
@@ -142,7 +146,7 @@ export default function HomePage() {
   ]
 
   return (
-    <div className="bg-background text-truffle-green flex flex-col items-center gap-24" >
+    <div className="bg-background text-truffle-green flex flex-col items-center gap-24 overflow-clip" >
 
       {/* HERO SECTION */}
       <section className="relative text-center flex flex-col items-center gap-14 justify-center w-full">
@@ -171,7 +175,8 @@ export default function HomePage() {
 
         {/* HERO IMAGE */}
         <section className="w-[90%] mt-4 relative max-lg:mt-18" >
-          <Image src="/LandingPage/hero_image.webp" priority={true} alt="Hero Image" className="max-md:h-[350px] max-md:object-cover border-2 border-truffle-green-dark rounded-[60px] max-md:rounded-[40px]" width={2134} height={1032} />
+          {/* <Image src="/LandingPage/hero_image.webp" priority={true} alt="Hero Image" className="max-md:h-[350px] max-md:object-cover border-2 border-truffle-green-dark rounded-[60px] max-md:rounded-[40px]" width={2134} height={1032} /> */}
+          <FadeImage />
 
           <Image priority={true} className="absolute left-10 -top-16 max-md:w-22 max-md:left-5" src="/LandingPage/sniffing_scout.webp" alt="Scout Sniffing" width={100} height={100} />
           <Image priority={true} className="absolute right-10 -top-16 max-md:w-22 max-md:right-5" src="/LandingPage/happy_scout.webp" alt="Scout Happy" width={100} height={100} />
