@@ -26,7 +26,7 @@ type FeatureSectionProps = {
 
 function FeatureCard({ data }: FeatureCardProps) {
     return (
-        <div className="bg-truffle-green-light rounded-4xl overflow-hidden w-[400px] min-w-[400px] max-w-md">
+        <div className="bg-truffle-green-light rounded-4xl overflow-hidden w-[400px] min-w-[350px] max-md:w-[350px]">
             <div className="flex items-end justify-center h-[280px]">
                 <Image className="object-cover w-[100%] h-[100%]" src={data.illustrationSrc} alt={`${data.title} Illustration`} width={400} height={300} />
             </div>
