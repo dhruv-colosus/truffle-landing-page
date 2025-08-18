@@ -48,8 +48,8 @@ const PricingCards = () => {
 
         },
         {
-            name: "Elite",
-            price: "$49",
+            name: "Ultra",
+            price: "$199",
             period: "/mo",
             features: [
                 "everything in PRO",
@@ -71,7 +71,7 @@ const PricingCards = () => {
             {plans.map((plan, index) => (
                 <Card
                     key={index}
-                    className={`relative min-w-[300px] max-md:min-w-[400px] rounded-[20px] justify-between border-2 border-truffle-green-dark ${plan.popular
+                    className={`relative w-[380px] min-w-[300px] max-md:min-w-[400px] rounded-[20px] justify-between border-2 border-truffle-green-dark ${plan.popular
                         ? 'bg-truffle-green text-white'
                         : 'bg-card max-lg:order-1'
                         }`}
