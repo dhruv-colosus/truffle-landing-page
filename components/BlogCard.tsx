@@ -16,7 +16,7 @@ type BlogCardProps = {
 
 export default function BlogCard({ data }: BlogCardProps) {
     return (
-        <div className="w-80 max-md:w-[90%] max-w-[400px] h-[420px] border rounded-lg overflow-hidden bg-white shadow flex flex-col">
+        <div className="w-80 max-md:w-[90%] max-w-[400px] h-[420px] border-2 border-truffle-green-dark rounded-lg overflow-hidden bg-white shadow flex flex-col">
             {/* Image */}
             <div className="h-64 w-full">
                 <Image
