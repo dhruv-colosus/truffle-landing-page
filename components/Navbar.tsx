@@ -34,7 +34,7 @@ export default function Navbar() {
             <div className="md:hidden ml-4">
                 <ListIcon onClick={() => setShowMobileMenu(true)} size={20} stroke="black " strokeWidth={18} />
 
-                <div className={`${showMobileMenu || 'h-0 opacity-0 top-[-200px] bg-red-500 overflow-hidden p-0'} border-b-4 border-truffle-green-dark shadow-xl animate-in fade-in-50  transition-all duration-500 ease-in-out absolute right-0 top-0 p-10 text-xl w-screen z-10 flex flex-col items-start gap-4 bg-background font-semibold font-display uppercase`}>
+                <div className={`${showMobileMenu || 'h-0 opacity-0 top-[-200px] overflow-hidden p-0'} border-b-4 border-truffle-green-dark shadow-xl animate-in fade-in-50  transition-all duration-500 ease-in-out absolute right-0 top-0 p-10 text-xl w-screen z-10 flex flex-col items-start gap-4 bg-background font-semibold font-display uppercase`}>
                     <XIcon onClick={() => setShowMobileMenu(false)}  className="self-end absolute mt-6 mr-5 top-0 right-0" size={20} stroke="black " strokeWidth={18} />
 
                     <Link href="/" scroll={false} onClick={() => scrollTo('whyus')}>Why Us ?</Link>
